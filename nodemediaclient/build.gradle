@@ -24,27 +24,17 @@ android {
     afterEvaluate {
         publishing {
             publications {
-                release(MavenPublication) {
-                    from components.release
+                productionRelease(MavenPublication) {
+                    from components.productionRelease
+                    groupId = 'tv.zelive.nodemedia'
+                    artifactId = 'id'
+                    version = Config.libraryVersion
                 }
             }
         }
     }
 
 }
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'foo'
-            artifactId = 'bar'
-            version = '0.1'
-
-            from components.java
-        }
-    }
-}
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
