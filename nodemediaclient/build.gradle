@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 apply plugin: 'maven'
 
-group = 'com.github.ZeLive'
+group = 'com.github.ZeLive-tv'
 
 android {
     compileSdkVersion 30
@@ -24,17 +24,4 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:28.0.0"
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'tv.zelive.nodemedia'
-                artifactId = 'nodemedia'
-                version = '1.0'
-            }
-        }
-    }
 }
