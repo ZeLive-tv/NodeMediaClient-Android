@@ -20,20 +20,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    afterEvaluate {
-        publishing {
-            publications {
-                productionRelease(MavenPublication) {
-                    from components.productionRelease
-                    groupId = 'tv.zelive.nodemedia'
-                    artifactId = 'id'
-                    version = Config.libraryVersion
-                }
-            }
-        }
-    }
-
 }
 
 dependencies {
